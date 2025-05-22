@@ -1,16 +1,14 @@
 **Caleb Tinonas**
 EGL301 – Assignment 1
 
-# 🏥 HealthySG – Clinic System Simulator
+# HealthySG – Clinic System Simulator
 
 
 **HealthySG.js** is a simple Node.js module that simulates a basic clinic system. It helps you register patients, book or cancel appointments, and handle billing – including grants and partial payments.
 
-> 💬 *"Be healthy, everyone!"*
-
 ---
 
-## ✅ What You Can Do
+## What You Can Do
 
 * Register new patients
 * Book and cancel appointments
@@ -65,7 +63,7 @@ node app.js
 
 ---
 
-## 🧩 Functions Explained
+## Functions Explained
 
 ### `registerPatient(nric, name, phone, dob, address)`
 
@@ -135,7 +133,7 @@ Shows unpaid or partially paid bills. If everything is paid, it says so!
 
 ---
 
-## 💡 Notes
+##  Notes
 
 * Appointment IDs are auto-created (e.g., `APTNO6`).
 * Each payment updates the bill automatically.
@@ -144,12 +142,10 @@ Shows unpaid or partially paid bills. If everything is paid, it says so!
 
 ---
 
-## 🔗 Useful Links
+## Reference links
 
 * [HealthHub Singapore](https://www.healthhub.sg/)
 * [Zocdoc – Appointment Booking](https://www.zocdoc.com/)
 * Special thanks to ChatGPT for guidance.
 
----
-
-Let me know if you'd like to make it even more visual or turn it into a GitHub-style README!
+* :)
