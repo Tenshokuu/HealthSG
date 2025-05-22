@@ -1,6 +1,4 @@
-Here is a **fully copy-pasteable `README.md` file** for your `HealthySG.js` project. It is clean, detailed, and follows best practices for student submissions:
 
-````markdown
 # HealthySG – Healthcare Management Simulation
 
 **HealthySG.js** is a Node.js module simulating core healthcare operations for a fictional clinic system. It includes functionalities like patient registration, appointment management, and a basic billing system with support for grants and partial payments.
