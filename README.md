@@ -242,7 +242,6 @@ const Bills = [
 * ChatGPT for the development of the sample data
 
 :) saranghaeyo
-```
 
 
 
