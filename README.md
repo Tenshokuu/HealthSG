@@ -28,7 +28,7 @@ HealthySG.js is a Node.js module that simulates a basic healthcare system. It al
 
 ### 1. Requirements
 
-- Node.js (any stable version)
+- Node.js
 
 ### 2. Setup
 
