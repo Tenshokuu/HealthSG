@@ -16,11 +16,38 @@ HealthySG.js is a Node.js module that simulates a basic healthcare system. It al
 
 ## Features
 
-- Patient registration  
-- Appointment booking and cancellation  
-- View appointments by NRIC  
-- Pay bills (full, partial, or with grant)  
-- View outstanding bills  
+Patient Management
+Register New Patients
+Add new patients to the system using their NRIC and personal details.
+
+Duplicate Check
+Prevents duplicate registrations by checking existing NRICs.
+
+Appointment Management
+Book Appointments
+Schedule appointments for registered patients with specified doctors, dates, and times.
+
+Automatic Appointment IDs
+Generates unique appointment IDs (e.g., APTNO1, APTNO2) for each new booking.
+
+Cancel Appointments
+Allows patients to cancel appointments using their appointment ID.
+
+View Appointments by NRIC
+Retrieves all appointments associated with a specific NRIC.
+
+Billing System
+Bill Tracking
+Stores total amount, paid amount, and status (unpaid, partial, paid) for each patient.
+
+Partial and Full Payment
+Supports both full and partial bill payments.
+
+Grant Application
+Allows patients to apply for a grant, marking the bill as "in progress".
+
+Bill Summary by NRIC
+Displays all outstanding bills for a patient or confirms if all are settled.
 
 ---
 
