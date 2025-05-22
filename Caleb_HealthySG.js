@@ -1,5 +1,5 @@
 // HealthySG.js
-//BE HEALTHY EVERYONE !!
+//BE HEALTHY EVERYONE !! :)
 
 // array to contain the data of patients (simulates patient records stored in a database)
 const patients = [
