@@ -1,60 +1,63 @@
+**Caleb Tinonas**
+EGL301 – Assignment 1
 
-# HealthySG – Healthcare Management Simulation
+# 🏥 HealthySG – Clinic System Simulator
 
-**HealthySG.js** is a Node.js module simulating core healthcare operations for a fictional clinic system. It includes functionalities like patient registration, appointment management, and a basic billing system with support for grants and partial payments.
 
-> 💡 *“BE HEALTHY EVERYONE!!”*
+**HealthySG.js** is a simple Node.js module that simulates a basic clinic system. It helps you register patients, book or cancel appointments, and handle billing – including grants and partial payments.
 
----
-
-## 📦 Features
-
-- ✅ Patient Registration  
-- ✅ Appointment Booking & Cancellation  
-- ✅ View Appointments by NRIC  
-- ✅ Bill Payment Handling (Full, Partial, with Grant Support)  
-- ✅ View Outstanding Bills by NRIC  
+> 💬 *"Be healthy, everyone!"*
 
 ---
 
-## ⚙️ How to Use
+## ✅ What You Can Do
+
+* Register new patients
+* Book and cancel appointments
+* View a patient’s appointments
+* Make bill payments (full, partial, or with grants)
+* Check outstanding bills
+
+---
+
+## 🛠️ Getting Started
 
 ### 1. Requirements
 
-- Node.js (LTS recommended)
+* Node.js (LTS version is best)
 
 ### 2. File Setup
 
-- Save the main module file as `HealthySG.js`.
-- Create a file called `app.js` in the same directory.
-- Add the following code in `app.js` to test the system:
+1. Save your module file as `HealthySG.js`.
+2. Create a file called `app.js` in the same folder.
+3. Add this sample code to try out the system:
 
-```javascript
+```js
 const healthySG = require("./HealthySG");
 
-// Register a new patient
-console.log(healthySG.registerPatient("T1234567Z", "Jane Doe", "91111222", "1985-09-20", "789 clementi ave 3"));
+// Register a patient
+console.log(healthySG.registerPatient("T1234567Z", "Jane Doe", "91111222", "1985-09-20", "789 Clementi Ave 3"));
 
 // Book an appointment
-console.log(healthySG.bookAppointment("T1234567Z", "2025-06-10", "10:00", "dr. lim"));
+console.log(healthySG.bookAppointment("T1234567Z", "2025-06-10", "10:00", "Dr. Lim"));
 
 // View appointments
 console.log(healthySG.getAPTbyNRIC("T1234567Z"));
 
-// Pay a bill partially
+// Make a partial payment
 console.log(healthySG.payDaBill("S7654321B", 70));
 
-// Apply a grant
+// Apply for a grant
 console.log(healthySG.payDaBill("S7654321B", 0, true));
 
-// View bills
+// View outstanding bills
 console.log(healthySG.billsbyNRIC("S7654321B"));
 
 // Cancel an appointment
 console.log(healthySG.cancelAppointment("APTNO2"));
-````
+```
 
-### 3. Run the app
+### 3. Run the App
 
 ```bash
 node app.js
@@ -62,52 +65,52 @@ node app.js
 
 ---
 
-## 🧠 Module Functions
+## 🧩 Functions Explained
 
-### `registerPatient(nric, fullName, phone, dob, address)`
+### `registerPatient(nric, name, phone, dob, address)`
 
-Registers a patient if not already registered.
+Adds a new patient if they’re not already registered.
 
-### `bookAppointment(nric, appointmentDate, appointmentTime, doctor)`
+### `bookAppointment(nric, date, time, doctor)`
 
-Creates a new appointment. Generates an automatic `appointmentId`.
+Books a new appointment and auto-generates an appointment ID.
 
 ### `getAPTbyNRIC(nric)`
 
-Returns all appointments for the given NRIC. If none, returns an error message.
+Shows all appointments for a patient.
 
-### `payDaBill(nric, amount, Grant = false)`
+### `payDaBill(nric, amount, grant = false)`
 
-Processes bill payments. Supports:
+Handles bill payments:
 
-* Full or partial payments
-* Grant application (marks bill as "in progress")
+* Pay fully or partially
+* Optionally apply for a grant (marks bill as "in progress")
 
 ### `cancelAppointment(appointmentId)`
 
-Removes an appointment based on its ID.
+Cancels an appointment using its ID.
 
 ### `billsbyNRIC(nric)`
 
-Displays all unpaid or partially paid bills for a patient. Returns a success message if all bills are settled.
+Shows unpaid or partially paid bills. If everything is paid, it says so!
 
 ---
 
-## 📁 Sample Data Overview
+## 🧾 Sample Data
 
-### 🧍 Patients
+### Patient
 
 ```js
 {
   nric: "S1234567A",
-  fullName: "caleb tinonas",
+  fullName: "Caleb Tinonas",
   phone: "91234567",
   dob: "1993-01-01",
-  address: "123 orchard road"
+  address: "123 Orchard Road"
 }
 ```
 
-### 🩺 Appointments
+### Appointment
 
 ```js
 {
@@ -115,11 +118,11 @@ Displays all unpaid or partially paid bills for a patient. Returns a success mes
   nric: "S1234567A",
   appointmentDate: "2025-06-01",
   appointmentTime: "09:00",
-  doctor: "dr. lim"
+  doctor: "Dr. Lim"
 }
 ```
 
-### 💰 Bills
+### Bill
 
 ```js
 {
@@ -132,29 +135,21 @@ Displays all unpaid or partially paid bills for a patient. Returns a success mes
 
 ---
 
-## 🗒️ Notes
+## 💡 Notes
 
-* Each new appointment generates a unique ID like `APTNO6`.
-* Bills are updated automatically with each payment.
-* Grant applications don’t change paidAmount but change bill status to `"in progress"`.
+* Appointment IDs are auto-created (e.g., `APTNO6`).
+* Each payment updates the bill automatically.
+* Grant requests don’t reduce the amount but change the status to `"in progress"`.
 
----
-
-## 🙋 Author
-
-**Caleb Tinonas**
-EGL301 – NTU Healthcare System Simulation (2025)
 
 ---
 
-## 📚 References
+## 🔗 Useful Links
 
-* Carousell-style Object Management from Course Examples
-* Guardian / Watsons UX Inspiration
-* Node.js Docs – [https://nodejs.org](https://nodejs.org)
-* ChatGPT Guidance – Payment Simulation & Design Logic
+* [HealthHub Singapore](https://www.healthhub.sg/)
+* [Zocdoc – Appointment Booking](https://www.zocdoc.com/)
+* Special thanks to ChatGPT for guidance.
 
-```
+---
 
-Let me know if you'd like me to create a demo or test version of `app.js` with even more sample cases!
-```
+Let me know if you'd like to make it even more visual or turn it into a GitHub-style README!
