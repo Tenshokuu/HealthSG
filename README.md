@@ -2,6 +2,11 @@
 
 
 # HealthySG – Healthcare Management Simulation
+Caleb Tinonas
+EGL301 – Assignment 1
+
+
+
 
 HealthySG.js is a Node.js module that simulates a basic healthcare system. It allows patient registration, appointment booking and cancellation, and simple billing functions including grant support and partial payments.
 
