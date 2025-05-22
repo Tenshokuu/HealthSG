@@ -18,7 +18,7 @@ EGL301 – Assignment 1
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### 1. Requirements
 
@@ -94,7 +94,7 @@ Shows unpaid or partially paid bills. If everything is paid, it says so!
 
 ---
 
-## 🧾 Sample Data
+## Sample Data
 
 ### Patient
 
