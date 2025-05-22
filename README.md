@@ -1,7 +1,7 @@
 
 
 
-# HealthySG – Healthcare Management Simulation
+# HealthySG – Healthcare System
 Caleb Tinonas
 EGL301 – Assignment 1
 --- 
