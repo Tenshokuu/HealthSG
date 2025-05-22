@@ -1,59 +1,45 @@
-**Caleb Tinonas**
-EGL301 – Assignment 1
-
-# HealthySG – Clinic System Simulator
 
 
-**HealthySG.js** is a simple Node.js module that simulates a basic clinic system. It helps you register patients, book or cancel appointments, and handle billing – including grants and partial payments.
 
----
+# HealthySG – Healthcare Management Simulation
 
-## What You Can Do
-
-* Register new patients
-* Book and cancel appointments
-* View a patient’s appointments
-* Make bill payments (full, partial, or with grants)
-* Check outstanding bills
+HealthySG.js is a Node.js module that simulates a basic healthcare system. It allows patient registration, appointment booking and cancellation, and simple billing functions including grant support and partial payments.
 
 ---
 
-## Getting Started
+## Features
+
+- Patient registration  
+- Appointment booking and cancellation  
+- View appointments by NRIC  
+- Pay bills (full, partial, or with grant)  
+- View outstanding bills  
+
+---
+
+## How to Use
 
 ### 1. Requirements
 
-* Node.js (LTS version is best)
+- Node.js (any stable version)
 
-### 2. File Setup
+### 2. Setup
 
-1. Save your module file as `HealthySG.js`.
-2. Create a file called `app.js` in the same folder.
-3. Add this sample code to try out the system:
+1. Save the module as `HealthySG.js`
+2. Create a test file called `app.js` in the same directory
+3. Add the following code in `app.js` to test:
 
-```js
+```javascript
 const healthySG = require("./HealthySG");
 
-// Register a patient
-console.log(healthySG.registerPatient("T1234567Z", "Jane Doe", "91111222", "1985-09-20", "789 Clementi Ave 3"));
-
-// Book an appointment
-console.log(healthySG.bookAppointment("T1234567Z", "2025-06-10", "10:00", "Dr. Lim"));
-
-// View appointments
+console.log(healthySG.registerPatient("T1234567Z", "Jane Doe", "91111222", "1985-09-20", "789 clementi ave 3"));
+console.log(healthySG.bookAppointment("T1234567Z", "2025-06-10", "10:00", "dr. lim"));
 console.log(healthySG.getAPTbyNRIC("T1234567Z"));
-
-// Make a partial payment
 console.log(healthySG.payDaBill("S7654321B", 70));
-
-// Apply for a grant
 console.log(healthySG.payDaBill("S7654321B", 0, true));
-
-// View outstanding bills
 console.log(healthySG.billsbyNRIC("S7654321B"));
-
-// Cancel an appointment
 console.log(healthySG.cancelAppointment("APTNO2"));
-```
+````
 
 ### 3. Run the App
 
@@ -63,34 +49,34 @@ node app.js
 
 ---
 
-## Functions Explained
+## Module Functions
 
-### `registerPatient(nric, name, phone, dob, address)`
+### registerPatient(nric, fullName, phone, dob, address)
 
-Adds a new patient if they’re not already registered.
+Registers a patient if they are not already in the system.
 
-### `bookAppointment(nric, date, time, doctor)`
+### bookAppointment(nric, appointmentDate, appointmentTime, doctor)
 
-Books a new appointment and auto-generates an appointment ID.
+Books an appointment for a registered patient and assigns a new appointment ID.
 
-### `getAPTbyNRIC(nric)`
+### getAPTbyNRIC(nric)
 
-Shows all appointments for a patient.
+Returns all appointments linked to a patient's NRIC.
 
-### `payDaBill(nric, amount, grant = false)`
+### payDaBill(nric, amount, Grant = false)
 
-Handles bill payments:
+Handles bill payment:
 
-* Pay fully or partially
-* Optionally apply for a grant (marks bill as "in progress")
+* Adds to paid amount
+* If a grant is applied, marks the bill as "in progress"
 
-### `cancelAppointment(appointmentId)`
+### cancelAppointment(appointmentId)
 
-Cancels an appointment using its ID.
+Cancels an appointment by appointment ID.
 
-### `billsbyNRIC(nric)`
+### billsbyNRIC(nric)
 
-Shows unpaid or partially paid bills. If everything is paid, it says so!
+Displays unpaid or partially paid bills. Returns a confirmation if all bills are fully paid.
 
 ---
 
@@ -101,10 +87,10 @@ Shows unpaid or partially paid bills. If everything is paid, it says so!
 ```js
 {
   nric: "S1234567A",
-  fullName: "Caleb Tinonas",
+  fullName: "caleb tinonas",
   phone: "91234567",
   dob: "1993-01-01",
-  address: "123 Orchard Road"
+  address: "123 orchard road"
 }
 ```
 
@@ -116,7 +102,7 @@ Shows unpaid or partially paid bills. If everything is paid, it says so!
   nric: "S1234567A",
   appointmentDate: "2025-06-01",
   appointmentTime: "09:00",
-  doctor: "Dr. Lim"
+  doctor: "dr. lim"
 }
 ```
 
@@ -133,19 +119,24 @@ Shows unpaid or partially paid bills. If everything is paid, it says so!
 
 ---
 
-##  Notes
+## Notes
 
-* Appointment IDs are auto-created (e.g., `APTNO6`).
-* Each payment updates the bill automatically.
-* Grant requests don’t reduce the amount but change the status to `"in progress"`.
-
+* Appointment IDs are auto-generated in the format APTNO1, APTNO2, etc.
+* Grant applications do not reduce the bill amount but update the status to "in progress".
+* Bill status updates automatically based on total paid.
 
 ---
 
-## Reference links
 
-* [HealthHub Singapore](https://www.healthhub.sg/)
-* [Zocdoc – Appointment Booking](https://www.zocdoc.com/)
-* Special thanks to ChatGPT for guidance.
+## References
 
-* :)
+
+* https://www.healthhub.sg/
+* https://www.zocdoc.com/
+* ChatGPT for the development of the sample data
+
+:) saranghaeyo
+```
+
+
+
